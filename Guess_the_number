@@ -1,0 +1,22 @@
+import random
+
+def generator(min,max,n):
+    for i in range(n):
+        yield random.randint(min,max)
+        
+for r in generator(1,50,1):
+    number = r
+    i=0
+    for i in range(5):
+        guess=int(input())
+        if number == guess:
+            print('Equal')
+            break
+        if number > guess:
+            print('Number is more then yours, enter one more time')
+            i+=1
+        if number < guess:
+            print('Nunber is less then yours, enter one more time')
+            i+=1
+        if i==5:
+            print('You are not lucky')
